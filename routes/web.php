@@ -25,19 +25,19 @@ Route::group(['middleware' => []], function () {
     Route::prefix('livros')->group(function () {
         Route::get('', [LivroController::class, 'index'])->name('livros');
         Route::get('new', [LivroController::class, 'new'])->name('livros.new');
-        Route::get('edit/{code}', [LivroController::class, 'edit'])->name('livros.edit');
+        Route::get('edit/{codl}', [LivroController::class, 'edit'])->name('livros.edit');
         Route::post('insert', [LivroController::class, 'insert'])->name('livros.insert');
-        Route::post('update/{code}', [LivroController::class, 'update'])->name('livros.update');
-        Route::post('delete/{code}', [LivroController::class, 'delete'])->name('livros.delete');
+        Route::post('update/{codl}', [LivroController::class, 'update'])->name('livros.update');
+        Route::post('delete/{codl}', [LivroController::class, 'delete'])->name('livros.delete');
     });
 
     Route::prefix('autores')->group(function () {
         Route::get('', [AutorController::class, 'index'])->name('autores');
         Route::get('new', [AutorController::class, 'new'])->name('autores.new');
-        Route::get('edit/{code}', [AutorController::class, 'edit'])->name('autores.edit');
+        Route::get('edit/{codau}', [AutorController::class, 'edit'])->name('autores.edit');
         Route::post('insert', [AutorController::class, 'insert'])->name('autores.insert');
-        Route::post('update/{code}', [AutorController::class, 'update'])->name('autores.update');
-        Route::post('delete/{code}', [AutorController::class, 'delete'])->name('autores.delete');
+        Route::post('update/{codau}', [AutorController::class, 'update'])->name('autores.update');
+        Route::post('delete/{codau}', [AutorController::class, 'delete'])->name('autores.delete');
     });
 
     Route::prefix('assuntos')->group(function () {

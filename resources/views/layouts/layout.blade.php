@@ -125,7 +125,7 @@
                         <div class="col-sm-6">
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> © Silva Empreendimentos Digitais.
+                            </script> © Augusto Alves da Silva.
                         </div>
                         <div class="col-sm-6">
                             <div class="text-sm-end d-none d-sm-block">

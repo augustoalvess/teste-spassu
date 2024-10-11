@@ -34,8 +34,9 @@ return [
     'general_data' => 'Dados gerais',
     'id' => 'ID',
     'code' => 'Código',
-    'name' => 'Nome',
-    'value' => 'Valor',
+    'nome' => 'Nome',
+    'titulo' => 'Título',
+    'valor' => 'Valor',
     'price' => 'Preço',
     'currency' => 'BRL',
     'monetary' => 'R$',
@@ -46,6 +47,9 @@ return [
     'autor' => 'Autor',
     'autores' => 'Autores',
     'relatorio' => 'Relatorio',
-    'descricao' => 'Descrição'
-
+    'descricao' => 'Descrição',
+    'editora' => 'Editora',
+    'edicao' => 'Edição',
+    'anopublicacao' => 'Ano de publicação',
+    'livro_info' => 'Informações do livro'
 ];

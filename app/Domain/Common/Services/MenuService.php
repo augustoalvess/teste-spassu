@@ -7,13 +7,14 @@ use stdClass;
 class MenuService {
 
     public static function menu() {
-        // Livros
         $menu = [];
+        
+        // Assuntos
         $menuitem = new stdClass();
-        $menuitem->name = "livros";
-        $menuitem->title = __('strings.livros');
-        $menuitem->route = "livros";
-        $menuitem->icon = "ri-book-2-line";
+        $menuitem->name = "assuntos";
+        $menuitem->title = __('strings.assuntos');
+        $menuitem->route = "assuntos";
+        $menuitem->icon = "ri-list-check";
         $menuitem->ordenation = 1;
         $menuitem->sons = [];
         $menu[] = $menuitem;
@@ -28,15 +29,15 @@ class MenuService {
         $menuitem->sons = [];
         $menu[] = $menuitem;
 
-        // Assuntos
+        // Livros
         $menuitem = new stdClass();
-        $menuitem->name = "assuntos";
-        $menuitem->title = __('strings.assuntos');
-        $menuitem->route = "assuntos";
-        $menuitem->icon = "ri-list-check";
+        $menuitem->name = "livros";
+        $menuitem->title = __('strings.livros');
+        $menuitem->route = "livros";
+        $menuitem->icon = "ri-book-2-line";
         $menuitem->ordenation = 3;
         $menuitem->sons = [];
-        $menu[] = $menuitem;
+        $menu[] = $menuitem;        
         
         // Relatório
         $menuitem = new stdClass();
@@ -44,7 +45,7 @@ class MenuService {
         $menuitem->title = __('strings.relatorio');
         $menuitem->route = "relatorio";
         $menuitem->icon = "ri-file-chart-line";
-        $menuitem->ordenation = 3;
+        $menuitem->ordenation = 4;
         $menuitem->sons = [];
         $menu[] = $menuitem;
             

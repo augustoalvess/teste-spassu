@@ -19,6 +19,7 @@ class CreateLivroTable extends Migration
             $table->string('editora', 40);
             $table->integer('edicao');
             $table->string('anopublicacao', 4);
+            $table->float('valor', 14, 4)->nullable();
             $table->timestamps();
         });
     }
