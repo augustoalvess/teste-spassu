@@ -14,7 +14,7 @@ class LivroController extends Controller
 {
     public function index() {
         $rows = LivroService::get();
-        return view('components.register.livros-index', [
+        return view('components.register.livros.livros-index', [
             'rows' => $rows
         ]);
     }
@@ -22,7 +22,7 @@ class LivroController extends Controller
     public function new() {
         $autores = AutorService::list();
         $assuntos = AssuntoService::list();
-        return view('components.register.livros-form', [
+        return view('components.register.livros.livros-form', [
             'route' => route('livros.insert'), 
             'autores' => $autores,
             'assuntos' => $assuntos
@@ -34,7 +34,7 @@ class LivroController extends Controller
         if ($model) {
             $autores = AutorService::list();
             $assuntos = AssuntoService::list();
-            return view('components.register.livros-form', [
+            return view('components.register.livros.livros-form', [
                 'route' => route('livros.update', $code), 
                 'autores' => $autores,
                 'assuntos' => $assuntos,

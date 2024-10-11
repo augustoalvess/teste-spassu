@@ -23,6 +23,9 @@ return [
     'action' => 'Atuação',
     'yes' => 'Sim',
     'no' => 'Não',
+    'created_at' => 'Criado em',
+    'success', 'Sucesso!',
+    'error' => 'Erro!',
     'select' => 'Selecione...',
     'status_in_progress' => 'Em andamento',
     'status_in_wating' => 'Em espera',
@@ -36,10 +39,13 @@ return [
     'price' => 'Preço',
     'currency' => 'BRL',
     'monetary' => 'R$',
-    'created_at' => 'Criado em',
-    'expiration_at' => 'Expira em',
-    'copy' => 'Copiar',
-    'copy_success' => 'Cópia realizada com sucesso.',
-    'success', 'Sucesso!',
-    'error' => 'Erro!'
+    'livro' => 'Livro',
+    'livros' => 'Livros',
+    'assunto' => 'Assunto',
+    'assuntos' => 'Assuntos',
+    'autor' => 'Autor',
+    'autores' => 'Autores',
+    'relatorio' => 'Relatorio',
+    'descricao' => 'Descrição'
+
 ];

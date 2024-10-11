@@ -43,10 +43,10 @@ Route::group(['middleware' => []], function () {
     Route::prefix('assuntos')->group(function () {
         Route::get('', [AssuntoController::class, 'index'])->name('assuntos');
         Route::get('new', [AssuntoController::class, 'new'])->name('assuntos.new');
-        Route::get('edit/{code}', [AssuntoController::class, 'edit'])->name('assuntos.edit');
+        Route::get('edit/{codas}', [AssuntoController::class, 'edit'])->name('assuntos.edit');
         Route::post('insert', [AssuntoController::class, 'insert'])->name('assuntos.insert');
-        Route::post('update/{code}', [AssuntoController::class, 'update'])->name('assuntos.update');
-        Route::post('delete/{code}', [AssuntoController::class, 'delete'])->name('assuntos.delete');
+        Route::post('update/{codas}', [AssuntoController::class, 'update'])->name('assuntos.update');
+        Route::post('delete/{codas}', [AssuntoController::class, 'delete'])->name('assuntos.delete');
     });
 
     Route::prefix('relatorio')->group(function () {

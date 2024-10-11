@@ -12,7 +12,7 @@ class RelatorioController extends Controller
 {
     public function index() {
         $formats = ReportService::getFormats();
-        return view('components.register.relatorio-form', [
+        return view('components.register.relatorio.relatorio-form', [
             'route' => route('relatorio.generate'), 
             'formats' => $formats
         ]);

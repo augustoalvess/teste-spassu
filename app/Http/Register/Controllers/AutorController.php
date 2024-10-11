@@ -12,13 +12,13 @@ class AutorController extends Controller
 {
     public function index() {
         $rows = AutorService::get();
-        return view('components.register.autores-index', [
+        return view('components.register.autores.autores-index', [
             'rows' => $rows
         ]);
     }
 
     public function new() {
-        return view('components.register.autores-form', [
+        return view('components.register.autores.autores-form', [
             'route' => route('autores.insert')
         ]);
     }
@@ -26,7 +26,7 @@ class AutorController extends Controller
     public function edit($code) {
         $model = AutorService::find($code);
         if ($model) {
-            return view('components.register.autores-form', [
+            return view('components.register.autores.autores-form', [
                 'route' => route('autores.update', $code), 
                 'data' => $model
             ]);

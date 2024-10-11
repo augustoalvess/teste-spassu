@@ -13,13 +13,13 @@ class AssuntoController extends Controller
 {
     public function index() {
         $rows = AssuntoService::get();
-        return view('components.register.assuntos-index', [
+        return view('components.register.assuntos.assuntos-index', [
             'rows' => $rows
         ]);
     }
 
     public function new() {
-        return view('components.register.assuntos-form', [
+        return view('components.register.assuntos.assuntos-form', [
             'route' => route('assuntos.insert')
         ]);
     }
@@ -27,7 +27,7 @@ class AssuntoController extends Controller
     public function edit($code) {
         $model = AssuntoService::find($code);
         if ($model) {
-            return view('components.register.assuntos-form', [
+            return view('components.register.assuntos.assuntos-form', [
                 'route' => route('assuntos.update', $code), 
                 'data' => $model
             ]);
@@ -48,7 +48,7 @@ class AssuntoController extends Controller
         }
     }
 
-    public function update(AutorRequest $request, $code) {
+    public function update(AssuntoRequest $request, $code) {
         $data = $request->all();
         DB::beginTransaction();
         try {
