@@ -3,7 +3,7 @@ services:
 
     ## Banco ##
     db:
-        image: postgres:9.5
+        image: postgres:13
         ports:
             - "5433:5432"
         environment:
@@ -24,6 +24,8 @@ services:
             - db
         volumes:
             - ./:/var/www/html/teste-spassu/
+            - letsencrypt:/etc/letsencrypt
+            - apache:/etc/apache2
         working_dir: /var/www/html/teste-spassu/
         ports:
             - "8000:80"
@@ -53,7 +55,9 @@ services:
             - teste-network
 
 volumes:
-    db-data:
+    postgresql:
+    letsencrypt:
+    apache:
 
 networks:
     teste-network:
