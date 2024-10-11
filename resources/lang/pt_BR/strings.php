@@ -34,6 +34,8 @@ return [
     'delete_quest' => 'Deseja realmente excluir este registro?',
     'delete_error' => 'Ocorreram problemas ao tentar excluir o registro: :error',
     'delete_success' => 'Registro excluído com sucesso.',
+    'generate_success' => 'Documento gerado com sucesso.',
+    'generate_error' => 'Ocorreram problemas ao tentar gerar o documento: :error',
     'select' => 'Selecione...',
     'status_in_progress' => 'Em andamento',
     'status_in_wating' => 'Em espera',
