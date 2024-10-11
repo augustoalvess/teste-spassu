@@ -3,20 +3,20 @@
 namespace App\Domain\Register\Services;
 
 use App\Domain\Common\Interfaces\ServiceInterface;
-use App\Domain\Register\Models\Category;
+use App\Domain\Register\Models\Autor;
 
-class CategoryService implements ServiceInterface {
+class AutorService implements ServiceInterface {
 
     public static function get($columns = ['*'], $filters = [], $or = []) {
-        return Category::contract()->where($filters)->orWhere($or)->get($columns);
+        return Autor::where($filters)->orWhere($or)->get($columns);
     }
 
     public static function list($filters = [], $or = []) {
-        return self::get(['id AS value', 'description'], $filters, $or);
+        return self::get(['codau AS value', 'nome AS description'], $filters, $or);
     }
 
     public static function find($code) {
-        return Category::contract()->where('code', $code)->first();
+        return Autor::where('codau', $code)->first();
     }
 
     public static function save($data, $code = null) {
@@ -26,7 +26,7 @@ class CategoryService implements ServiceInterface {
     }
 
     public static function insert($data) {
-        $model = new Category();
+        $model = new Autor();
         $model->fill($data);
         $model->save();
         return true;

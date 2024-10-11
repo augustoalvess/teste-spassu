@@ -3,22 +3,22 @@
 namespace App\Domain\Register\Services;
 
 use App\Domain\Common\Interfaces\ServiceInterface;
-use App\Domain\Register\Models\Product;
-use App\Domain\Register\Models\ProductItem;
-use App\Domain\Register\Models\ProductProvider;
+use App\Domain\Register\Models\Livro;
+use App\Domain\Register\Models\LivroAssunto;
+use App\Domain\Register\Models\LivroAutor;
 
 class LivroService implements ServiceInterface {
 
     public static function get($columns = ['*'], $filters = [], $or = []) {
-        return Product::contract()->product()->where($filters)->orWhere($or)->get($columns);
+        return Livro::where($filters)->orWhere($or)->get($columns);
     }
 
     public static function list($filters = [], $or = []) {
-        return self::get(['id AS value', 'description'], $filters, $or);
+        return self::get(['codl AS value', 'titulo AS description'], $filters, $or);
     }
 
     public static function find($code) {
-        return Product::contract()->product()->where('code', $code)->first();
+        return Livro::where('code', $code)->first();
     }
 
     public static function save($data, $code = null) {
@@ -28,21 +28,20 @@ class LivroService implements ServiceInterface {
     }
 
     public static function insert($data) {
-        $model = new Product();
+        $model = new Livro();
         $model->fill($data);
-        $model->type = Product::TYPE_PRODUCT;
         $model->save();
-        foreach ($data['product_providers'] ?? [] as $provider) {
-            $productProvider = new ProductProvider();
-            $productProvider->fill($provider);
-            $productProvider->product_id = $model->id;
-            $productProvider->save();
+        foreach ($data['autores'] ?? [] as $autor) {
+            $livroautor = new LivroAutor();
+            $livroautor->fill($autor);
+            $livroautor->livro_codl = $model->id;
+            $livroautor->save();
         }
-        foreach ($data['product_items'] ?? [] as $item) {
-            $productItem = new ProductItem();
-            $productItem->fill($item);
-            $productItem->product_id = $model->id;
-            $productItem->save();
+        foreach ($data['assuntos'] ?? [] as $assunto) {
+            $livroassunto = new LivroAssunto();
+            $livroassunto->fill($assunto);
+            $livroassunto->livro_codl = $model->id;
+            $livroassunto->save();
         }
         return true;
     }
@@ -50,33 +49,32 @@ class LivroService implements ServiceInterface {
     public static function update($data, $code) {
         $model = self::find($code);
         $model->fill($data);
-        $model->type = Product::TYPE_PRODUCT;
         $model->save();
-        foreach ($model->providers as $productProvider) {
-            $findedProvider = array_filter($data['product_providers'], function($provider) use ($productProvider) {
-                return $productProvider->id == $provider['id'];
+        foreach ($model->autores as $livroautor) {
+            $find = array_filter($data['autores'], function($autor) use ($livroautor) {
+                return $livroautor->id == $autor['id'];
             });
-            if (empty($findedProvider))
-                $productProvider->delete();
+            if (empty($find))
+                $livroautor->delete();
         }
-        foreach ($data['product_providers'] ?? [] as $provider) {
-            $productProvider = ProductProvider::where('id', $provider['id'])->firstOrNew();
-            $productProvider->fill($provider);
-            $productProvider->product_id = $model->id;
-            $productProvider->save();
+        foreach ($data['autores'] ?? [] as $autor) {
+            $livroautor = LivroAutor::where('id', $autor['id'])->firstOrNew();
+            $livroautor->fill($autor);
+            $livroautor->livro_codl = $model->id;
+            $livroautor->save();
         }
-        foreach ($model->items as $productItem) {
-            $findedItem = array_filter($data['product_items'], function($item) use ($productItem) {
-                return $productItem->id == $item['id'];
+        foreach ($model->assuntos as $livroassunto) {
+            $find = array_filter($data['assuntos'], function($assunto) use ($livroassunto) {
+                return $livroassunto->id == $assunto['id'];
             });
-            if (empty($findedItem))
-                $productItem->delete();
+            if (empty($find))
+                $livroassunto->delete();
         }
-        foreach ($data['product_items'] ?? [] as $item) {
-            $productItem = ProductItem::where('id', $item['id'])->firstOrNew();
-            $productItem->fill($item);
-            $productItem->product_id = $model->id;
-            $productItem->save();
+        foreach ($data['assuntos'] ?? [] as $assunto) {
+            $livroassunto = LivroAssunto::where('id', $assunto['id'])->firstOrNew();
+            $livroassunto->fill($assunto);
+            $livroassunto->livro_codl = $model->id;
+            $livroassunto->save();
         }
         return true;
     }
