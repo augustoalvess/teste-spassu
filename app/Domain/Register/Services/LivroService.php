@@ -18,7 +18,7 @@ class LivroService implements ServiceInterface {
     }
 
     public static function find($code) {
-        return Livro::where('code', $code)->first();
+        return Livro::where('codl', $code)->first();
     }
 
     public static function save($data, $code = null) {
@@ -34,13 +34,13 @@ class LivroService implements ServiceInterface {
         foreach ($data['autores'] ?? [] as $autor) {
             $livroautor = new LivroAutor();
             $livroautor->fill($autor);
-            $livroautor->livro_codl = $model->id;
+            $livroautor->livro_codl = $model->codl;
             $livroautor->save();
         }
         foreach ($data['assuntos'] ?? [] as $assunto) {
             $livroassunto = new LivroAssunto();
             $livroassunto->fill($assunto);
-            $livroassunto->livro_codl = $model->id;
+            $livroassunto->livro_codl = $model->codl;
             $livroassunto->save();
         }
         return true;
@@ -60,7 +60,7 @@ class LivroService implements ServiceInterface {
         foreach ($data['autores'] ?? [] as $autor) {
             $livroautor = LivroAutor::where('id', $autor['id'])->firstOrNew();
             $livroautor->fill($autor);
-            $livroautor->livro_codl = $model->id;
+            $livroautor->livro_codl = $model->codl;
             $livroautor->save();
         }
         foreach ($model->assuntos as $livroassunto) {
@@ -73,7 +73,7 @@ class LivroService implements ServiceInterface {
         foreach ($data['assuntos'] ?? [] as $assunto) {
             $livroassunto = LivroAssunto::where('id', $assunto['id'])->firstOrNew();
             $livroassunto->fill($assunto);
-            $livroassunto->livro_codl = $model->id;
+            $livroassunto->livro_codl = $model->codl;
             $livroassunto->save();
         }
         return true;
