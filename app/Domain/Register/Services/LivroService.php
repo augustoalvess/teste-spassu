@@ -31,25 +31,39 @@ class LivroService implements ServiceInterface {
         $model = new Livro();
         $model->fill($data);
         $model->save();
+        self::insertLivroAutores($data, $model);
+        self::insertLivroAssuntos($data, $model);
+        return true;
+    }
+
+    public static function insertLivroAutores($data, $model) {
         foreach ($data['autores'] ?? [] as $autor) {
-            $livroautor = new LivroAutor();
+            $livroautor = LivroAutor::where('id', $autor['id'])->firstOrNew();
             $livroautor->fill($autor);
             $livroautor->livro_codl = $model->codl;
             $livroautor->save();
         }
+    }
+
+    public static function insertLivroAssuntos($data, $model) {
         foreach ($data['assuntos'] ?? [] as $assunto) {
-            $livroassunto = new LivroAssunto();
+            $livroassunto = LivroAssunto::where('id', $assunto['id'])->firstOrNew();
             $livroassunto->fill($assunto);
             $livroassunto->livro_codl = $model->codl;
             $livroassunto->save();
         }
-        return true;
     }
 
     public static function update($data, $code) {
         $model = self::find($code);
         $model->fill($data);
         $model->save();
+        self::updateLivroAutores($data, $model);
+        self::updateLivroAssuntos($data, $model);
+        return true;
+    }
+
+    public static function updateLivroAutores($data, $model) {
         foreach ($model->autores as $livroautor) {
             $find = array_filter($data['autores'], function($autor) use ($livroautor) {
                 return $livroautor->id == $autor['id'];
@@ -57,12 +71,10 @@ class LivroService implements ServiceInterface {
             if (empty($find))
                 $livroautor->delete();
         }
-        foreach ($data['autores'] ?? [] as $autor) {
-            $livroautor = LivroAutor::where('id', $autor['id'])->firstOrNew();
-            $livroautor->fill($autor);
-            $livroautor->livro_codl = $model->codl;
-            $livroautor->save();
-        }
+        self::insertLivroAutores($data, $model);
+    }
+
+    public static function updateLivroAssuntos($data, $model) {
         foreach ($model->assuntos as $livroassunto) {
             $find = array_filter($data['assuntos'], function($assunto) use ($livroassunto) {
                 return $livroassunto->id == $assunto['id'];
@@ -70,13 +82,7 @@ class LivroService implements ServiceInterface {
             if (empty($find))
                 $livroassunto->delete();
         }
-        foreach ($data['assuntos'] ?? [] as $assunto) {
-            $livroassunto = LivroAssunto::where('id', $assunto['id'])->firstOrNew();
-            $livroassunto->fill($assunto);
-            $livroassunto->livro_codl = $model->codl;
-            $livroassunto->save();
-        }
-        return true;
+        self::insertLivroAssuntos($data, $model);
     }
 
     public static function delete($code) {
