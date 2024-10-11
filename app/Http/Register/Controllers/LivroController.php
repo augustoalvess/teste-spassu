@@ -2,8 +2,6 @@
 
 namespace App\Http\Register\Controllers;
 
-use App\Domain\Register\Services\AssuntoService;
-use App\Domain\Register\Services\AutorService;
 use App\Domain\Register\Services\LivroService;
 use App\Http\Common\Controllers\Controller;
 use App\Http\Register\Requests\LivroRequest;
@@ -20,24 +18,16 @@ class LivroController extends Controller
     }
 
     public function new() {
-        $autores = AutorService::list();
-        $assuntos = AssuntoService::list();
         return view('components.register.livros.livros-form', [
-            'route' => route('livros.insert'), 
-            'autores' => $autores,
-            'assuntos' => $assuntos
+            'route' => route('livros.insert')
         ]);
     }
 
     public function edit($code) {
         $model = LivroService::find($code);
         if ($model) {
-            $autores = AutorService::list();
-            $assuntos = AssuntoService::list();
             return view('components.register.livros.livros-form', [
-                'route' => route('livros.update', $code), 
-                'autores' => $autores,
-                'assuntos' => $assuntos,
+                'route' => route('livros.update', $code),
                 'data' => $model
             ]);
         }

@@ -173,7 +173,9 @@ return [
         App\Domain\Common\Providers\AuthServiceProvider::class,
         // App\Domain\Common\Providers\BroadcastServiceProvider::class,
         App\Domain\Common\Providers\EventServiceProvider::class,
-        App\Domain\Common\Providers\RouteServiceProvider::class
+        App\Domain\Common\Providers\RouteServiceProvider::class,
+
+        App\Domain\Register\Providers\LivroProvider::class
     ],
 
     /*
