@@ -13,10 +13,10 @@ class CreateLivroAutorTable extends Migration
      */
     public function up()
     {
-        Schema::create('Livro_Autor', function (Blueprint $table) {
+        Schema::create('livro_autor', function (Blueprint $table) {
             $table->id();
-            $table->integer('Livro_Codl')->constrained('Livro');
-            $table->integer('Assunto_codAs')->constrained('Assunto');
+            $table->integer('livro_codl')->constrained('livro');
+            $table->integer('autor_codau')->constrained('autor');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateLivroAutorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Livro_Autor');
+        Schema::dropIfExists('livro_autor');
     }
 }

@@ -13,9 +13,9 @@ class CreateAssuntoTable extends Migration
      */
     public function up()
     {
-        Schema::create('Assunto', function (Blueprint $table) {
-            $table->id('codAs');
-            $table->string('Descricao', 20);
+        Schema::create('assunto', function (Blueprint $table) {
+            $table->id('codas');
+            $table->string('descricao', 20);
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateAssuntoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Assunto');
+        Schema::dropIfExists('assunto');
     }
 }
