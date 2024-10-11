@@ -1,0 +1,103 @@
+
+/*
+* https://remixicon.com
+* https://github.com/Remix-Design/RemixIcon
+* Copyright RemixIcon.com
+* Released under the Apache License Version 2.0
+*/
+
+@font-face {
+    font-family: "remixicon";
+    src: url('remixicon.eot?t=1647704457453'); /* IE9*/
+    src: url('remixicon.eot?t=1647704457453#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url("remixicon.woff2?t=1647704457453") format("woff2"),
+    url("remixicon.woff?t=1647704457453") format("woff"),
+    url('remixicon.ttf?t=1647704457453') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('remixicon.svg?t=1647704457453#remixicon') format('svg'); /* iOS 4.1- */
+    font-display: swap;
+}
+
+[class^="ri-"], [class*="ri-"] {
+    font-family: 'remixicon' !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.ri-lg { font-size: 1.3333em; line-height: 0.75em; vertical-align: -.0667em; }
+.ri-xl { font-size: 1.5em; line-height: 0.6666em; vertical-align: -.075em; }
+.ri-xxs { font-size: .5em; }
+.ri-xs { font-size: .75em; }
+.ri-sm { font-size: .875em }
+.ri-1x { font-size: 1em; }
+.ri-2x { font-size: 2em; }
+.ri-3x { font-size: 3em; }
+.ri-4x { font-size: 4em; }
+.ri-5x { font-size: 5em; }
+.ri-6x { font-size: 6em; }
+.ri-7x { font-size: 7em; }
+.ri-8x { font-size: 8em; }
+.ri-9x { font-size: 9em; }
+.ri-10x { font-size: 10em; }
+.ri-fw { text-align: center; width: 1.25em; }
+
+.ri-heart-line:before { content: "\ee0f"; }
+.ri-heart-2-line:before { content: "\ee09"; }
+.ri-heart-3-line:before { content: "\ee0b"; }
+.ri-heart-add-line:before { content: "\ee0d"; }
+.ri-dislike-line:before { content: "\ec3c"; }
+.ri-hearts-line:before { content: "\ee13"; }
+.ri-heart-pulse-line:before { content: "\ee11"; }
+.ri-pulse-line:before { content: "\f035"; }
+.ri-empathize-line:before { content: "\ec98"; }
+.ri-nurse-line:before { content: "\efac"; }
+.ri-heart-fill:before { content: "\ee0e"; }
+.ri-heart-2-fill:before { content: "\ee08"; }
+.ri-heart-3-fill:before { content: "\ee0a"; }
+.ri-heart-add-fill:before { content: "\ee0c"; }
+.ri-dislike-fill:before { content: "\ec3b"; }
+.ri-hearts-fill:before { content: "\ee12"; }
+.ri-heart-pulse-fill:before { content: "\ee10"; }
+.ri-pulse-fill:before { content: "\f034"; }
+.ri-empathize-fill:before { content: "\ec97"; }
+.ri-nurse-fill:before { content: "\efab"; }
+.ri-dossier-line:before { content: "\ec4e"; }
+.ri-health-book-line:before { content: "\ee07"; }
+.ri-first-aid-kit-line:before { content: "\ed37"; }
+.ri-capsule-line:before { content: "\eb37"; }
+.ri-medicine-bottle-line:before { content: "\ef2a"; }
+.ri-flask-line:before { content: "\ed3f"; }
+.ri-test-tube-line:before { content: "\f1fc"; }
+.ri-microscope-line:before { content: "\ef56"; }
+.ri-hand-sanitizer-line:before { content: "\edf5"; }
+.ri-mental-health-line:before { content: "\ef30"; }
+.ri-dossier-fill:before { content: "\ec4d"; }
+.ri-health-book-fill:before { content: "\ee06"; }
+.ri-first-aid-kit-fill:before { content: "\ed36"; }
+.ri-capsule-fill:before { content: "\eb36"; }
+.ri-medicine-bottle-fill:before { content: "\ef29"; }
+.ri-flask-fill:before { content: "\ed3e"; }
+.ri-test-tube-fill:before { content: "\f1fb"; }
+.ri-microscope-fill:before { content: "\ef55"; }
+.ri-hand-sanitizer-fill:before { content: "\edf4"; }
+.ri-mental-health-fill:before { content: "\ef2f"; }
+.ri-psychotherapy-line:before { content: "\f033"; }
+.ri-stethoscope-line:before { content: "\f197"; }
+.ri-syringe-line:before { content: "\f1d1"; }
+.ri-thermometer-line:before { content: "\f203"; }
+.ri-infrared-thermometer-line:before { content: "\ee5b"; }
+.ri-surgical-mask-line:before { content: "\f1c3"; }
+.ri-virus-line:before { content: "\f294"; }
+.ri-lungs-line:before { content: "\eee4"; }
+.ri-rest-time-line:before { content: "\f07e"; }
+.ri-zzz-line:before { content: "\f2df"; }
+.ri-psychotherapy-fill:before { content: "\f032"; }
+.ri-stethoscope-fill:before { content: "\f196"; }
+.ri-syringe-fill:before { content: "\f1d0"; }
+.ri-thermometer-fill:before { content: "\f202"; }
+.ri-infrared-thermometer-fill:before { content: "\ee5a"; }
+.ri-surgical-mask-fill:before { content: "\f1c2"; }
+.ri-virus-fill:before { content: "\f293"; }
+.ri-lungs-fill:before { content: "\eee3"; }
+.ri-rest-time-fill:before { content: "\f07d"; }
+.ri-zzz-fill:before { content: "\f2de"; }

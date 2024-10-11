@@ -1,0 +1,19 @@
+<p-schedule #fc 
+    [businessHours]="businessHours" 
+    [events]="events" 
+    [defaultDate]="date" 
+    [header]="header" 
+    [options]="options"
+    [editable]="true"
+    [eventStartEditable]="true"
+    [eventDurationEditable]="true"
+    locale="pt-br" 
+    [defaultView]="defaultView" 
+    [timezone]="timezone" 
+    (onViewRender)="onRender($event)" 
+    (onDayClick)="onDayClick($event)" 
+    (onEventClick)="onEventClick($event)"
+    (onEventDrop)="onEventDrop($event)"
+    (onEventResizeStop)="onEventResizeStop($event)"
+>
+</p-schedule>
