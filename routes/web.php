@@ -49,7 +49,7 @@ Route::group(['middleware' => []], function () {
         Route::post('delete/{codas}', [AssuntoController::class, 'delete'])->name('assuntos.delete');
     });
 
-    Route::prefix('relatorio')->group(function () {
+    Route::prefix('relatorios')->group(function () {
         Route::get('', [RelatorioController::class, 'index'])->name('relatorio');
         Route::post('generate', [RelatorioController::class, 'generate'])->name('relatorio.generate');
     });

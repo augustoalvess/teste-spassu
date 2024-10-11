@@ -15,6 +15,7 @@ return [
     'back' => 'Voltar',
     'add' => 'Adicionar',
     'generate' => 'Gerar',
+    'generate_report' => 'Gerar relatório',
     'search' => 'Buscar',
     'active' => 'Ativo',
     'visible' => 'Visível',
@@ -53,10 +54,13 @@ return [
     'assuntos' => 'Assuntos',
     'autor' => 'Autor',
     'autores' => 'Autores',
-    'relatorio' => 'Relatorio',
+    'relatorio' => 'Relatório',
     'descricao' => 'Descrição',
     'editora' => 'Editora',
     'edicao' => 'Edição',
     'anopublicacao' => 'Ano de publicação',
-    'livro_info' => 'Informações do livro'
+    'livro_info' => 'Informações do livro',
+    'relatorio_livros' => 'Relatório de livros',
+    'filter' => 'Filtro',
+    'filter_info' => 'Informe uma palavra chave para pesquisar (opcional)'
 ];
