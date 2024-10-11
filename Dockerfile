@@ -22,7 +22,7 @@ RUN php -r "copy('https://composer.github.io/installer.sig', 'composer-sig.txt')
     php composer-setup.php --install-dir=/usr/bin --filename=composer
 
 # NodeJS
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
+RUN curl -sL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get update && \
     apt-get -y install nodejs --no-install-recommends && \
     rm -r /var/lib/apt/lists/*
