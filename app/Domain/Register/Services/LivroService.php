@@ -7,7 +7,7 @@ use App\Domain\Register\Models\Product;
 use App\Domain\Register\Models\ProductItem;
 use App\Domain\Register\Models\ProductProvider;
 
-class ProductService implements ServiceInterface {
+class LivroService implements ServiceInterface {
 
     public static function get($columns = ['*'], $filters = [], $or = []) {
         return Product::contract()->product()->where($filters)->orWhere($or)->get($columns);
@@ -15,15 +15,6 @@ class ProductService implements ServiceInterface {
 
     public static function list($filters = [], $or = []) {
         return self::get(['id AS value', 'description'], $filters, $or);
-    }
-
-    public static function listTypes() {
-        return [
-            ['value' => Product::PRODUCT_TYPE_SIMPLE, 'description' => __('strings.product_type_simple')],
-            ['value' => Product::PRODUCT_TYPE_KIT, 'description' => __('strings.product_type_kit')],
-            ['value' => Product::PRODUCT_TYPE_RAW, 'description' => __('strings.product_type_raw')],
-            ['value' => Product::PRODUCT_TYPE_CONSUME, 'description' => __('strings.product_type_consume')]
-        ];
     }
 
     public static function find($code) {

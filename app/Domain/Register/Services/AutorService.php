@@ -15,13 +15,6 @@ class CategoryService implements ServiceInterface {
         return self::get(['id AS value', 'description'], $filters, $or);
     }
 
-    public static function listTypes() {
-        return [
-            ['value' => Category::CATEGORY_TYPE_PRODUCT, 'description' => __('strings.product')],
-            ['value' => Category::CATEGORY_TYPE_SERVICE, 'description' => __('strings.service')]
-        ];
-    }
-
     public static function find($code) {
         return Category::contract()->where('code', $code)->first();
     }
