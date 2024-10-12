@@ -18,8 +18,8 @@ class AssuntoUnitTest extends TestCase
     /** @test */
     public function read_assunto()
     {
-        $assunto = AssuntoService::find(-1);
-        $this->assertTrue(!empty($assunto));
+        $model = AssuntoService::find(-1);
+        $this->assertTrue(!empty($model));
     }
 
     /** @test */

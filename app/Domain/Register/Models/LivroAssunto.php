@@ -12,6 +12,7 @@ class LivroAssunto extends Model
     protected $table = 'livro_assunto';
 
     protected $fillable = [
+        'id',
         'livro_codl',
         'assunto_codas',
     ];

@@ -18,8 +18,8 @@ class AutorUnitTest extends TestCase
     /** @test */
     public function read_autor()
     {
-        $assunto = AutorService::find(-1);
-        $this->assertTrue(!empty($assunto));
+        $model = AutorService::find(-1);
+        $this->assertTrue(!empty($model));
     }
 
     /** @test */
