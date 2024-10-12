@@ -1,4 +1,4 @@
-## Projeto de teste Spassu
+## Projeto de teste Augusto Alves da Silva
 
 ### Subindo o projeto
 O projeto está adaptado à utilização de containers docker, portanto, possuindo o docker e docker-compose instalados, basta executar o seguinte comando (utilzar "sudo" se necessário):
