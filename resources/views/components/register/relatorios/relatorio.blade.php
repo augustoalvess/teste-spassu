@@ -1,16 +1,16 @@
-<title>Relatório de livros</title>
+<title>{{__('strings.relatorio_livros_titulo')}}</title>
 
-<h2 style="text-align:center;padding:10px;">RELATÓRIO GERAL DE LIVROS</h2>
+<h2 style="text-align:center;padding:10px;text-transform:uppercase">{{__('strings.relatorio_livros_titulo')}}</h2>
 <table id="relatorio-livros" width="100%" border="1" style="border-collapse: collapse" cellspacing="1" cellpadding="0">
     <thead>
         <tr>
-            <th>Autor</th>
-            <th>Livro</th>
-            <th>Editora</th>
-            <th>Edição</th>
-            <th>Ano pub.</th>
-            <th>Assuntos</th>
-            <th>Valor R$</th>
+            <th>{{__('strings.autor')}}</th>
+            <th>{{__('strings.livro')}}</th>
+            <th>{{__('strings.editora')}}</th>
+            <th>{{__('strings.edicao')}}</th>
+            <th>{{__('strings.anopublicacao')}}</th>
+            <th>{{__('strings.assuntos')}}</th>
+            <th>{{__('strings.valor')}}</th>
         </tr>
     </thead>
     <tbody>

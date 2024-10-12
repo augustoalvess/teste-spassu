@@ -46,7 +46,7 @@ return [
     'code' => 'Código',
     'nome' => 'Nome',
     'titulo' => 'Título',
-    'valor' => 'Valor',
+    'valor' => 'Valor R$',
     'price' => 'Preço',
     'currency' => 'BRL',
     'monetary' => 'R$',
@@ -61,9 +61,10 @@ return [
     'descricao' => 'Descrição',
     'editora' => 'Editora',
     'edicao' => 'Edição',
-    'anopublicacao' => 'Ano de publicação',
+    'anopublicacao' => 'Ano pub.',
     'livro_info' => 'Informações do livro',
     'relatorio_livros' => 'Relatório de livros',
+    'relatorio_livros_titulo' => 'Relatório geral de livros',
     'filter' => 'Filtro',
     'filter_info' => 'Informe uma palavra chave para pesquisar (opcional)'
 ];
