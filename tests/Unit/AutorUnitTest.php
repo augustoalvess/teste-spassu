@@ -2,17 +2,38 @@
 
 namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
+use App\Domain\Register\Services\AutorService;
+use Tests\TestCase;
 
 class AutorUnitTest extends TestCase
 {
-    /**
-     * A basic unit test example.
-     *
-     * @return void
-     */
-    public function test_example()
+    /** @test */
+    public function create_autor()
     {
-        $this->assertTrue(true);
+        $data = ['codau' => -1, 'nome' => 'Autor de teste'];
+        $result = AutorService::insert($data);
+        $this->assertTrue($result);
+    }
+
+    /** @test */
+    public function read_autor()
+    {
+        $assunto = AutorService::find(-1);
+        $this->assertTrue(!empty($assunto));
+    }
+
+    /** @test */
+    public function update_autor()
+    {
+        $data = ['nome' => 'Autor editado'];
+        $result = AutorService::update($data, -1);
+        $this->assertTrue($result);
+    }
+
+    /** @test */
+    public function delete_autor()
+    {
+        $result = AutorService::delete(-1);
+        $this->assertTrue($result);
     }
 }
