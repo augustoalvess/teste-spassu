@@ -16,7 +16,7 @@ $ php artisan test
 ```
 
 ### Relatório
-A view ao qual o relatório utiliza está implementada em um arquivo de seeder, para que desta forma, toda vez que as migrations de banco forem executadas, a view seja atualizada. Segue local da view:
+A view da qual o relatório utiliza está implementada em um arquivo de seeder, para que desta forma, toda vez que as migrations de banco forem executadas, a view seja atualizada. Segue local da view:
 ```
 database\seeders\LivrosViewSeeder.php
 ```
