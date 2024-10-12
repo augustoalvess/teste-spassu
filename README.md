@@ -1,7 +1,7 @@
 ## Projeto de teste Augusto Alves da Silva
 
 ### Subindo o projeto
-O projeto está adaptado à utilização de containers docker, portanto, possuindo o docker e docker-compose instalados, basta executar o seguinte comando (utilzar "sudo" se necessário):
+O projeto está adaptado à utilização de containers docker, portanto, possuindo o docker e docker-compose instalados, basta executar o seguinte comando na raiz do projeto (utilizar "sudo" se necessário):
 ```
 $ sudo docker-compose up
 ```
