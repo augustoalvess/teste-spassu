@@ -89,7 +89,21 @@ class LivroService implements ServiceInterface {
 
     public static function delete($code) {
         $model = self::find($code);
+        self::deleteLivroAutores($model);
+        self::deleteLivroAssuntos($model);
         return $model->delete();
+    }
+
+    public static function deleteLivroAutores($model) {
+        foreach ($model->autores as $livroautor)
+            $livroautor->delete();
+        return true;
+    }
+
+    public static function deleteLivroAssuntos($model) {
+        foreach ($model->assuntos as $livroassunto)
+            $livroassunto->delete();
+        return true;
     }
 
 }
