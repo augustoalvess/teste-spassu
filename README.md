@@ -10,7 +10,7 @@ $ sudo docker-compose up
 Após finalizado o processo de up do docker-compose, então acessar http://localhost:8000/. Coloquei na porta 8000 para não afetar outros serviços que possam estar rodando na porta 80.
 
 ### Testes unitários
-Para executar os testes unitários, é necessário conectar no container da aplicação e executar o seguinte comando:
+Para executar os testes unitários, é necessário conectar no container da aplicação "teste-spassu_app" e executar o seguinte comando:
 ```
 $ php artisan test
 ```
