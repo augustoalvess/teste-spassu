@@ -13,6 +13,7 @@ class Assunto extends Model
     protected $primaryKey = 'codas';
 
     protected $fillable = [
+        'codas',
         'descricao'
     ];
 }

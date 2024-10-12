@@ -22,7 +22,7 @@ function unloadPopupBox() {
 
 function loadPopupBox(e) {
     var target = $(e.delegateTarget);
-    if (!target.hasClass('no-loading')) {
+    if (!target.hasClass('no-loading') && !target.hasClass('page-link')) {
         $('#obscure-loading').fadeIn("slow");
     }
 }

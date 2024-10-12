@@ -13,6 +13,7 @@ class Autor extends Model
     protected $primaryKey = 'codau';
 
     protected $fillable = [
+        'codau',
         'nome'
     ];
 }

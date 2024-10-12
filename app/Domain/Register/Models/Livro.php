@@ -13,6 +13,7 @@ class Livro extends Model
     protected $primaryKey = 'codl';
 
     protected $fillable = [
+        'codl',
         'titulo',
         'editora',
         'edicao',
