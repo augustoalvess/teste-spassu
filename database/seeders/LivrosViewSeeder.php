@@ -40,7 +40,9 @@ class LivrosViewSeeder extends Seeder
                        livro.editora,
                        livro.edicao,
                        livro.anopublicacao,
-                       livro.valor                
+                       livro.valor
+              ORDER BY autor.nome,
+                       livro.titulo
             )
         ");        
     }

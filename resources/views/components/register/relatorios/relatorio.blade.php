@@ -1,10 +1,13 @@
 <title>{{__('strings.relatorio_livros_titulo')}}</title>
 
 <h2 style="text-align:center;padding:10px;text-transform:uppercase">{{__('strings.relatorio_livros_titulo')}}</h2>
+
 <table id="relatorio-livros" width="100%" border="1" style="border-collapse: collapse" cellspacing="1" cellpadding="0">
     <thead>
         <tr>
-            <th>{{__('strings.autor')}}</th>
+            <th colspan="6" height="20">{{__('strings.autor')}}</th>
+        </tr>
+        <tr>
             <th>{{__('strings.livro')}}</th>
             <th>{{__('strings.editora')}}</th>
             <th>{{__('strings.edicao')}}</th>
@@ -14,9 +17,15 @@
         </tr>
     </thead>
     <tbody>
+        @php $currentautor = null; @endphp
         @foreach ($data as $row)
+            @if ($row->autor_livro != $currentautor)
+                @php $currentautor = $row->autor_livro; @endphp
+                <tr>
+                    <td colspan="6" bgcolor="#eee" height="20">{{$row->autor_livro}}</td>
+                </tr>
+            @endif
             <tr>
-                <td>{{$row->autor_livro}}</td>
                 <td>{{$row->codigo_livro}} - {{$row->titulo_livro}}</td>
                 <td>{{$row->editora_livro}}</td>
                 <td align="right">{{$row->edicao_livro}}</td>
