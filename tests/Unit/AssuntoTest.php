@@ -5,7 +5,7 @@ namespace Tests\Unit;
 use App\Domain\Register\Services\AssuntoService;
 use Tests\TestCase;
 
-class AssuntoUnitTest extends TestCase
+class AssuntoTest extends TestCase
 {
     /** @test */
     public function create_assunto()

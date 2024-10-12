@@ -5,7 +5,7 @@ namespace Tests\Unit;
 use App\Domain\Register\Services\AutorService;
 use Tests\TestCase;
 
-class AutorUnitTest extends TestCase
+class AutorTest extends TestCase
 {
     /** @test */
     public function create_autor()

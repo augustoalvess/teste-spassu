@@ -7,7 +7,7 @@ use App\Domain\Register\Services\AutorService;
 use App\Domain\Register\Services\LivroService;
 use Tests\TestCase;
 
-class LivroUnitTest extends TestCase
+class LivroTest extends TestCase
 {
     /** @test */
     public function create_livro()
