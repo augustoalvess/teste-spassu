@@ -57,6 +57,7 @@ return [
     'autor' => 'Autor',
     'autores' => 'Autores',
     'relatorio' => 'Relatório',
+    'relatorios' => 'Relatórios',
     'descricao' => 'Descrição',
     'editora' => 'Editora',
     'edicao' => 'Edição',
