@@ -11,15 +11,6 @@ use PDF;
 class RelatorioController extends Controller
 {
     public function index() {
-
-        /**
-         Deve ser feito obrigatoriamente um relatório (utilizando o componente de relatórios de sua preferência(Crystal, ReportViewer, etc))
-         e a consulta desse relatório deve ser proveniente de uma view criada no banco de dados. 
-         Este relatório pode ser simples, mas permita o entendimento dos dados. 
-         O relatório deve trazer as informações das 3 tabelas principais agrupando os dados por autor (atenção pois um livro pode ter mais de autor).
-         */
-
-
         return view('components.register.relatorios.relatorio-form', [
             'route' => route('relatorio.generate')
         ]);

@@ -1,7 +1,6 @@
 <title>Relatório de livros</title>
 
 <h2 style="text-align:center;padding:10px;">RELATÓRIO GERAL DE LIVROS</h2>
-
 <table id="relatorio-livros" width="100%" border="1" style="border-collapse: collapse" cellspacing="1" cellpadding="0">
     <thead>
         <tr>
