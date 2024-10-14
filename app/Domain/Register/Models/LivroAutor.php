@@ -12,7 +12,6 @@ class LivroAutor extends Model
     protected $table = 'livro_autor';
 
     protected $fillable = [
-        'id',
         'livro_codl',
         'autor_codau',
     ];

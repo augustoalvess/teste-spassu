@@ -13,7 +13,7 @@
             <x-common.panels.tab-item id="livro_info" active="true">
                 <div class="row">
                     <div class="col-md-3 form-group">
-                        <x-common.fields.integer-field id="codl" label="{{__('strings.code')}}" value="{{old('codl') ?? $data->codl ?? ''}}" disabled="true"></x-common.fields.integer-field>
+                        <x-common.fields.integer-field id="cod" label="{{__('strings.code')}}" value="{{old('cod') ?? $data->codl ?? ''}}" disabled="true"></x-common.fields.integer-field>
                     </div>
                 </div>
                 <div class="row">
